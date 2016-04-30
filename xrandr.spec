@@ -4,7 +4,7 @@
 #
 Name     : xrandr
 Version  : 1.5.0
-Release  : 2
+Release  : 3
 URL      : http://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.0.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.0.tar.gz
 Summary  : No detailed summary available
