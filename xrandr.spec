@@ -6,7 +6,7 @@
 #
 Name     : xrandr
 Version  : 1.5.1
-Release  : 8
+Release  : 9
 URL      : http://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.1.tar.gz
 Source0  : http://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.1.tar.gz
 Source1  : http://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.1.tar.gz.sig
@@ -60,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1579286116
+export SOURCE_DATE_EPOCH=1583335273
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -77,18 +77,19 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1579286116
+export SOURCE_DATE_EPOCH=1583335273
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xrandr
 cp %{_builddir}/xrandr-1.5.1/COPYING %{buildroot}/usr/share/package-licenses/xrandr/b55b6493b790dc1291794a6b4f04064ce06bf435
 %make_install
+## Remove excluded files
+rm -f %{buildroot}/usr/bin/xkeystone
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/xkeystone
 /usr/bin/xrandr
 
 %files license
